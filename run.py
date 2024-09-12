@@ -42,6 +42,14 @@ def contact(): # View to be called by the Jinja function for the contact page
     return render_template('contact.html')
 
 
+@app.route('/careers')
+def careers():
+    '''
+    Returns the careers page
+    '''
+    return render_template('careers.html')
+
+
 if __name__ == '__main__': # __main__ is the name of the default module in Python
     app.run(
         host=os.environ.get('IP', '0.0.0.0'),
