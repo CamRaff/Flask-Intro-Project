@@ -19,11 +19,28 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 @app.route('/')
-def index():
+def index(): # View to be called by the Jinja function for the index/home page
     '''
-    Returns HTML
+    Returns the home page
     '''
     return render_template('index.html')
+
+
+@app.route('/about')
+def about(): # View to be called by the Jinja function for the about page
+    '''
+    Returns the about page
+    '''
+    return render_template('about.html')
+
+
+@app.route('/contact')
+def contact(): # View to be called by the Jinja function for the contact page
+    '''
+    Returns the contact page
+    '''
+    return render_template('contact.html')
+
 
 if __name__ == '__main__': # __main__ is the name of the default module in Python
     app.run(
