@@ -31,7 +31,7 @@ def about(): # View to be called by the Jinja function for the about page
     '''
     Returns the about page
     '''
-    return render_template('about.html')
+    return render_template('about.html', page_title='About')
 
 
 @app.route('/contact')
@@ -39,7 +39,7 @@ def contact(): # View to be called by the Jinja function for the contact page
     '''
     Returns the contact page
     '''
-    return render_template('contact.html')
+    return render_template('contact.html', page_title='Contact')
 
 
 @app.route('/careers')
@@ -47,7 +47,7 @@ def careers():
     '''
     Returns the careers page
     '''
-    return render_template('careers.html')
+    return render_template('careers.html', page_title='Careers')
 
 
 if __name__ == '__main__': # __main__ is the name of the default module in Python
