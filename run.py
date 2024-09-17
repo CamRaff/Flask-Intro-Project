@@ -7,6 +7,9 @@ Introduction to Flask project
 import os
 # Importing the Flask class from the flask module
 
+import json
+# Importing the json module from the standard Python library
+
 from flask import Flask, render_template
 
 # Creating an instance of the Flask class and storing it in a variable called app
@@ -31,7 +34,10 @@ def about(): # View to be called by the Jinja function for the about page
     '''
     Returns the about page
     '''
-    return render_template('about.html', page_title='About')
+    data = []
+    with open("data/company.json", "r") as json_data:
+        data = json.load(json_data)
+    return render_template('about.html', page_title='About', company=data)
 
 
 @app.route('/contact')
